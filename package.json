@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port %PORT%",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "ng-openapiV1": "ng-openapi-gen --input ../template-backend/template-monolith/src/Template.Spec/Documents/Monolith/openapi.yaml --output src/app/api --config openapi-gen/ng-openapi-gen.json"
   },
   "prettier": {
     "overrides": [
@@ -29,6 +30,7 @@
     "@angular/platform-browser": "^20.0.0",
     "@angular/router": "^20.0.0",
     "@tailwindcss/postcss": "^4.1.11",
+    "ng-openapi-gen": "^0.53.0",
     "postcss": "^8.5.6",
     "rxjs": "~7.8.0",
     "tailwindcss": "^4.1.11",

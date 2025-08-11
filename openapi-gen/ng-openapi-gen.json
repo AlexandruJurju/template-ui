@@ -1,0 +1,6 @@
+{
+  "ignoreUnusedModels": false,
+  "keepFullResponseMediaType": false,
+  "skipJsonSuffix": true,
+  "services": true
+}
