@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component} from '@angular/core';
+import {Router, RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +9,13 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected title = 'template-ui';
+
+  constructor(
+    private router: Router,
+  ) {
+  }
+
+  goToTest() {
+    void this.router.navigate(['/test']);
+  }
 }
