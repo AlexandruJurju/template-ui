@@ -1,0 +1,33 @@
+<div class="test-container">
+  <h2>SignalR Test</h2>
+
+  <div class="status">
+    Status: <span [class]="getStatusClass()">{{ connectionStatus }}</span>
+  </div>
+
+  <div class="controls">
+    <button (click)="connect()" [disabled]="isConnected">Connect</button>
+    <button (click)="disconnect()" [disabled]="!isConnected">Disconnect</button>
+    <button (click)="requestNumbers()" [disabled]="!isConnected">Request Numbers</button>
+    <button (click)="joinTestGroup()" [disabled]="!isConnected">Join Test Group</button>
+    <button (click)="leaveTestGroup()" [disabled]="!isConnected">Leave Test Group</button>
+    <button (click)="clearLogs()">Clear Logs</button>
+  </div>
+
+  <div class="latest-numbers" *ngIf="latestNumbers.length > 0">
+    <h3>Latest Numbers:</h3>
+    <div class="numbers">
+      <span *ngFor="let num of latestNumbers" class="number">{{ num }}</span>
+    </div>
+  </div>
+
+  <div class="logs">
+    <h3>Connection Logs:</h3>
+    <div class="log-container">
+      <div *ngFor="let log of logs" [class]="'log-' + log.type">
+        <span class="timestamp">{{ log.timestamp | date:'HH:mm:ss.SSS' }}</span>
+        <span class="message">{{ log.message }}</span>
+      </div>
+    </div>
+  </div>
+</div>
